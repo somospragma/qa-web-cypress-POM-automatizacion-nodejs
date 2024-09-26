@@ -2,7 +2,7 @@
   <br>
   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png"></a>
   <br>
-  Nombre del Proyecto
+  Nombre del Proyecto prueba
   <br>
 </h1>
 
@@ -52,44 +52,49 @@ El siguiente GIF es de ejemplo, si tienes uno propio reemplazalo, de lo contrari
 
 ## Topicos
 
-* Java
-* Bases de datos
-* SQL
-* Cucumber
-* Serenity
-* Selenium
+- Java
+- Bases de datos
+- SQL
+- Cucumber
+- Serenity
+- Selenium
 
 ## Tecnologias
+
 ### This project required:
+
 - [JDK java] version 16
 - [Serenity] version 4
 - [Gradle] last version
 
-Nota: 
-*   Se requiere Selenium posterior a la version 4.11 para la descarga automatica de algunos drivers de los navegadores
-    La version de Serenity implementada (4.0.0) ya incluye Selenium 4.12 lo cual soporta los navegadores a Octubre del 2023
-    si el proyecto presenta problemas relacionados a las version del driver descargado de forma automatica y la version de su 
-    navegador vale la pena revisar que este trabajando con versiones recientes de Serenity y checkear las versiones de Selenium
-    incluidas en dicha version de Serenity
-*   Con Selenium Manager incluido en Serenity 4.0.0 ya no se requiere WebDriverManager de Boni Garcia, razon por la cual ya
-    serenity no lo incluye dentro de sus dependencias
+Nota:
+
+- Se requiere Selenium posterior a la version 4.11 para la descarga automatica de algunos drivers de los navegadores
+  La version de Serenity implementada (4.0.0) ya incluye Selenium 4.12 lo cual soporta los navegadores a Octubre del 2023
+  si el proyecto presenta problemas relacionados a las version del driver descargado de forma automatica y la version de su
+  navegador vale la pena revisar que este trabajando con versiones recientes de Serenity y checkear las versiones de Selenium
+  incluidas en dicha version de Serenity
+- Con Selenium Manager incluido en Serenity 4.0.0 ya no se requiere WebDriverManager de Boni Garcia, razon por la cual ya
+  serenity no lo incluye dentro de sus dependencias
 
 ## Consideraciones
-- Para hacer uso de la la utilidad de Base de Datos es importante 
-        que se instacie una Base de datos y se configura en el archivo de configuración ubicado en:
+
+- Para hacer uso de la la utilidad de Base de Datos es importante
+  que se instacie una Base de datos y se configura en el archivo de configuración ubicado en:
 
             ./src/main/resources/configs/congig.properties
 
-        En las dependencias del proyecto esta agregada la dependencia del driver de MySQL, si no 
-        desea realizar mayores ajustes respecto al motor de BD use MySQL. Si desea usar otro motor, 
-        adiciones la dependencia del driver al build.gradle y configure este driver como observa 
-        se realizo para MySQL en: 
-    
+        En las dependencias del proyecto esta agregada la dependencia del driver de MySQL, si no
+        desea realizar mayores ajustes respecto al motor de BD use MySQL. Si desea usar otro motor,
+        adiciones la dependencia del driver al build.gradle y configure este driver como observa
+        se realizo para MySQL en:
+
             ./src/main/java/utils/ConectionBD.java
-        
+
         Nota: Algunos motores de BD no requieren agregar la dependencia del driver como Oracle o MSserver
 
 ## Descarga
+
 Para clonar está aplicación desde la linea de comando:
 
 ```bash
@@ -99,9 +104,10 @@ git remote remove origin
 git remote add origin URL_DE_TU_NUEVO_REPOSITORIO
 git push -u origin master
 ```
+
 Nota: Asegúrate de reemplazar URL_DE_TU_NUEVO_REPOSITORIO con la URL del repositorio que creaste en tu cuenta de GitHub.
 
-Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java) 
+Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java)
 
 ## Instalación y ejecución
 
@@ -111,7 +117,8 @@ Para ejecutar está aplicación, necesitas [Gradle](https://gradle.org/install) 
 gradle clean build
 ```
 
-##  🛠️ Run tests Chrome gradle:
+## 🛠️ Run tests Chrome gradle:
+
 ```
 gradle clean test -Dcontext=chrome -Dwebdriver.driver=chrome
 gradle clean test --info --stacktrace --tests "ruta.nameRunner" -Dcontext=chrome -Dwebdriver.driver=chrome
@@ -121,62 +128,62 @@ gradle clean test -Dcucumber.options="--tags '@someTag or @someTag'" -Dcontext=c
 
 Nota:
 
-*   Si ejecuta en la consola de gradle no debe usar comillas simples '...' para encerrar '-Dwebdriver.driver=chrome'
-*   Si ejecuta en la consola estándar de la máquina quizás si deba utilizar '...' en las porciones del comando que incluyan puntos
-*   Con "./gradlew test ..." ejecuta el gradle compilado del proyecto
-*   Con "gradle test ..." ejecuta el gradle de su maquina, el configurado en las variables de entorno de su sistema operativo
-
+- Si ejecuta en la consola de gradle no debe usar comillas simples '...' para encerrar '-Dwebdriver.driver=chrome'
+- Si ejecuta en la consola estándar de la máquina quizás si deba utilizar '...' en las porciones del comando que incluyan puntos
+- Con "./gradlew test ..." ejecuta el gradle compilado del proyecto
+- Con "gradle test ..." ejecuta el gradle de su maquina, el configurado en las variables de entorno de su sistema operativo
 
 ### ejemplo
+
 ```
 ./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.CompareImageRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
 ./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.LoginRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
 ```
 
+## 🛠️ Run tests Firefox gradle:
 
-##  🛠️ Run tests Firefox gradle:
 ```
 ./gradlew clean test -Dcontext=firefox '-Dwebdriver.driver=firefox'
 ./gradlew test --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
 ```
+
 ### ejemplo
+
 ```
 ./gradlew clean test --info --stacktrace --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
 ```
 
 ## **Run tests in different environments:**
+
 ```
 gradle command... -Denvironment=defaul
 gradle command... -Denvironment=dev
 gradle command... -Denvironment=qa
 gradle command... -Denvironment=prod
 ```
-### Note: 
+
+### Note:
+
     - The default environment will be used if no other value is provided
     - Could modify the environment urls in .../test/resources/serenity.conf
 
-
 ## **Run tests in different browser:**
+
 ```
 gradle command... -Dwebdriver.driver=chrome
 gradle command... -Dwebdriver.driver=firefox
 gradle command... -Dwebdriver.driver=edge
 ```
 
-
 ## Autores
 
-
-| [<img src="https://gitlab.com/uploads/-/system/user/avatar/13437423/avatar.png?width=400" width=115><br><sub>Mauro L. Ibarra P.</sub>](https://gitlab.com/mauro.ibarrap) <br/> | [<img src="https://secure.gravatar.com/avatar/23b2db02403d79ebd356e8e8356758ec?s=192&d=identicon" width=115><br><sub>Otro autor</sub>](https://gitlab.com/) | 
-:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-
+| [<img src="https://gitlab.com/uploads/-/system/user/avatar/13437423/avatar.png?width=400" width=115><br><sub>Mauro L. Ibarra P.</sub>](https://gitlab.com/mauro.ibarrap) <br/> | [<img src="https://secure.gravatar.com/avatar/23b2db02403d79ebd356e8e8356758ec?s=192&d=identicon" width=115><br><sub>Otro autor</sub>](https://gitlab.com/) |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 ## Relacionados
 
 - [proyecto-base-serenity-bdd-screenplay-browsers-and-utilities](https://github.com/somospragma/qa-web-proyecto-base-serenity-bdd-screenplay-browsers-and-utilities)
 
-
 ## Roadmap
 
 - [Guia QA](https://github.com/amitmerchant1990/pomolectron) - (En construcción) Una guia de proyectos Orientados a la Calidad de Software
-
