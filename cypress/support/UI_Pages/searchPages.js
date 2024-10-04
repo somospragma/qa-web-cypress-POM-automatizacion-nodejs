@@ -1,1 +1,0 @@
-export const FIRTS_PRODUCT = '.thumbnail > img'

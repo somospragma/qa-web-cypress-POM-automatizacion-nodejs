@@ -1,1 +1,0 @@
-export const INPUT_SEARCH = '.ui-autocomplete-input'

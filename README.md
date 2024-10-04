@@ -1,189 +1,123 @@
-<h1 align="center">
-  <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png"></a>
-  <br>
-  Nombre del Proyecto prueba
-  <br>
-</h1>
-
-<h4 align="center">Proyecto base de <a href="https://github.com/karatelabs/karate" target="_blank">Pragma</a>.</h4>
-
-De aca en adelante encontraras las partes del readme con un pequeño ejemplo dentro de cada una de ellas, actualiza su contenido (no olvides borrar esta línea)
-
-<p align="center">
-  <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html">
-    <img src="https://img.shields.io/badge/Java-11+-orange.svg" alt="Java">
-  </a>
-  <a href="https://www.mysql.com/">
-    <img src="https://img.shields.io/badge/Database-MySQL-blue.svg" alt="MySQL">
-  </a>
-  <a href="https://www.postgresql.org/">
-    <img src="https://img.shields.io/badge/Database-PostgreSQL-blue.svg" alt="PostgreSQL">
-  </a>
-  <a href="https://www.w3schools.com/sql/">
-    <img src="https://img.shields.io/badge/SQL-Fundamentals-lightgrey.svg" alt="SQL">
-  </a>
-  <a href="https://cucumber.io/">
-    <img src="https://img.shields.io/badge/Cucumber-BDD-green.svg" alt="Cucumber">
-  </a>
-  <a href="https://serenity-bdd.info/">
-    <img src="https://img.shields.io/badge/Serenity-Reporting-blueviolet.svg" alt="Serenity">
-  </a>
-  <a href="https://www.selenium.dev/">
-    <img src="https://img.shields.io/badge/Selenium-Web_Testing-brightgreen.svg" alt="Selenium">
-  </a>
-</p>
-
-Redacta aca una breve descripcion del proyecto...
-
-<p align="center">
-  <a href="#topicos">Topicos</a> •
-  <a href="#tecnologias">Tecnologias</a> •
-  <a href="#consideraciones">Consideraciones</a> •
-  <a href="#descarga">Descarga</a> •
-  <a href="#instalación-y-ejecución">Instalación y ejecución</a> •
-  <a href="#autores">Autores</a> •
-  <a href="#relacionados">Relacionados</a> •
-  <a href="#roadmap">Roadmap</a>
-</p>
-
-El siguiente GIF es de ejemplo, si tienes uno propio reemplazalo, de lo contrario eliminalo.
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
-## Topicos
-
-- Java
-- Bases de datos
-- SQL
-- Cucumber
-- Serenity
-- Selenium
-
-## Tecnologias
-
-### This project required:
-
-- [JDK java] version 16
-- [Serenity] version 4
-- [Gradle] last version
-
-Nota:
-
-- Se requiere Selenium posterior a la version 4.11 para la descarga automatica de algunos drivers de los navegadores
-  La version de Serenity implementada (4.0.0) ya incluye Selenium 4.12 lo cual soporta los navegadores a Octubre del 2023
-  si el proyecto presenta problemas relacionados a las version del driver descargado de forma automatica y la version de su
-  navegador vale la pena revisar que este trabajando con versiones recientes de Serenity y checkear las versiones de Selenium
-  incluidas en dicha version de Serenity
-- Con Selenium Manager incluido en Serenity 4.0.0 ya no se requiere WebDriverManager de Boni Garcia, razon por la cual ya
-  serenity no lo incluye dentro de sus dependencias
-
-## Consideraciones
-
-- Para hacer uso de la la utilidad de Base de Datos es importante
-  que se instacie una Base de datos y se configura en el archivo de configuración ubicado en:
-
-            ./src/main/resources/configs/congig.properties
-
-        En las dependencias del proyecto esta agregada la dependencia del driver de MySQL, si no
-        desea realizar mayores ajustes respecto al motor de BD use MySQL. Si desea usar otro motor,
-        adiciones la dependencia del driver al build.gradle y configure este driver como observa
-        se realizo para MySQL en:
-
-            ./src/main/java/utils/ConectionBD.java
-
-        Nota: Algunos motores de BD no requieren agregar la dependencia del driver como Oracle o MSserver
-
-## Descarga
-
-Para clonar está aplicación desde la linea de comando:
-
-```bash
-git clone https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java
-cd qa-transversal-proyecto-base-manejo-base-de-datos-java
-git remote remove origin
-git remote add origin URL_DE_TU_NUEVO_REPOSITORIO
-git push -u origin master
-```
-
-Nota: Asegúrate de reemplazar URL_DE_TU_NUEVO_REPOSITORIO con la URL del repositorio que creaste en tu cuenta de GitHub.
-
-Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-transversal-proyecto-base-manejo-base-de-datos-java)
-
-## Instalación y ejecución
-
-Para ejecutar está aplicación, necesitas [Gradle](https://gradle.org/install) and [Java JDK](https://www.oracle.com/java/technologies/downloads/) instalados en tu equipo, ten en cuenta que tu IDE puede gestionar la instalación de estos dos requerimientos. Desde la linea de comando:
+# Folder Structure
 
 ```
-gradle clean build
+└── 📁cypress
+    └── 📁po
+        └── 📁components
+            └── 📁common
+                └── base.component.js
+                └── header.component.js
+            └── 📁computeEngineForm
+                └── computeEngineForm.component.js
+                └── costDetail.component.js
+            └── 📁costSummaryDialog
+                └── costSummaryDialog.component.js
+            └── 📁pricingCalculator
+                └── productsDialog.component.js
+        └── index.js
+        └── 📁pages
+            └── base.page.js
+            └── computeEngineForm.page.js
+            └── costEstimateSummary.page.js
+            └── homeGoogleCloud.page.js
+            └── index.js
+            └── pricingCalculator.page.js
+            └── searchResults.page.js
+    └── 📁tests
+        └── googleCloud.tests.js
+    └── 📁utils
+        └── google-cloud-computing.dataset.json
 ```
 
-## 🛠️ Run tests Chrome gradle:
+# Usage
 
-```
-gradle clean test -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test --info --stacktrace --tests "ruta.nameRunner" -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test -Dcucumber.options="--tags @someTag" -Dcontext=chrome -Dwebdriver.driver=chrome
-gradle clean test -Dcucumber.options="--tags '@someTag or @someTag'" -Dcontext=chrome -Dwebdriver.driver=chrome
-```
+For use this project clone from the repository https://github.com/MafeJh/Task3.git and install WDIO with `npm init wdio .` command. After that, please go to your wdio.conf.js and be sure you are exporting wih exports.config instead of ECMAS type module. Also go to your package.json and delete `"type": "modules"`, later ypu can add to scripts the route for the test: `"wdio": "wdio run ./src/config/wdio.conf.js"`.
 
-Nota:
+# Run the test
 
-- Si ejecuta en la consola de gradle no debe usar comillas simples '...' para encerrar '-Dwebdriver.driver=chrome'
-- Si ejecuta en la consola estándar de la máquina quizás si deba utilizar '...' en las porciones del comando que incluyan puntos
-- Con "./gradlew test ..." ejecuta el gradle compilado del proyecto
-- Con "gradle test ..." ejecuta el gradle de su maquina, el configurado en las variables de entorno de su sistema operativo
+- `wdio:smoke`
+- `wdio:prod`
+- `wdio:dev`
 
-### ejemplo
+You can work with:
 
-```
-./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.CompareImageRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
-./gradlew clean test --info --stacktrace --tests "co.com.pragma.runners.LoginRunner" -Dcontext=chrome '-Dwebdriver.driver=chrome'
-```
+- `NODE_ENV` With the environment values like `dev` and `prod`
 
-## 🛠️ Run tests Firefox gradle:
+- `SUITE` With the types of tests like `smoke` and `regression`
 
-```
-./gradlew clean test -Dcontext=firefox '-Dwebdriver.driver=firefox'
-./gradlew test --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
-```
+The smoke test ensure the main path it's Ok, validating the items exist.
 
-### ejemplo
+The prod environment has different values from dev environment, but runs in the same script.
 
-```
-./gradlew clean test --info --stacktrace --tests "runners.RunnerTags" '-Dcontext=firefox -Dwebdriver.driver=firefox'
-```
+# Test Flow
 
-## **Run tests in different environments:**
+The flow consist in go to the page Google Cloud Platform and look for the Pricing Calculator feature and select GC Compute engine, then add the products and finally validate the summary cost price.
 
-```
-gradle command... -Denvironment=defaul
-gradle command... -Denvironment=dev
-gradle command... -Denvironment=qa
-gradle command... -Denvironment=prod
-```
+## 1. Open the Google Cloud Platform
 
-### Note:
+Navigate to Google Cloud.
+Search for the Pricing Calculator:
+Click on the search icon at the top of the portal page.
+Enter "Google Cloud Platform Pricing Calculator" into the search field.
+Perform the search.
 
-    - The default environment will be used if no other value is provided
-    - Could modify the environment urls in .../test/resources/serenity.conf
+## 2. Access the Calculator
 
-## **Run tests in different browser:**
+Click on "Google Cloud Platform Pricing Calculator" from the search results.
+You will be redirected to the calculator page.
 
-```
-gradle command... -Dwebdriver.driver=chrome
-gradle command... -Dwebdriver.driver=firefox
-gradle command... -Dwebdriver.driver=edge
-```
+## 3. Select Compute Engine product from the pricing calculator page
 
-## Autores
+Click on "add to estimate" then a dialog is open with some products
+Click on the "Compute Engine" card.
 
-| [<img src="https://gitlab.com/uploads/-/system/user/avatar/13437423/avatar.png?width=400" width=115><br><sub>Mauro L. Ibarra P.</sub>](https://gitlab.com/mauro.ibarrap) <br/> | [<img src="https://secure.gravatar.com/avatar/23b2db02403d79ebd356e8e8356758ec?s=192&d=identicon" width=115><br><sub>Otro autor</sub>](https://gitlab.com/) |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
+## 4. Fill the Compute Engine Form
 
-## Relacionados
+Fill out the form with the following data:
+Number of instances: 4
+Operating System / Software: Free: paid-sles OS
+Provisioning model: Regular
+Machine Family: General purpose
+Series: N1
+Machine type: n1-standard-2 (vCPUs: 2, RAM: 7.5 GB)
+Add GPUs:
+GPU type: NVIDIA Tesla P4
+Number of GPUs: 2
+Local SSD: 2x375 Gb
+Datacenter location: Northern Virginia (us-east4)
+Committed usage: 1 Year
+Leave other options in their default state.
 
-- [proyecto-base-serenity-bdd-screenplay-browsers-and-utilities](https://github.com/somospragma/qa-web-proyecto-base-serenity-bdd-screenplay-browsers-and-utilities)
+## 5. Estimate the Cost
 
-## Roadmap
+Still in the same page of Compute Engine, in the right there is cost details section
+Verify the price calculated in the right section of the calculator in the line “Total Estimated Cost: USD ${amount} per 1 month”.
 
-- [Guia QA](https://github.com/amitmerchant1990/pomolectron) - (En construcción) Una guia de proyectos Orientados a la Calidad de Software
+## 6. Share and Verify the Estimate
+
+Click on "Share" to see the Total estimated cost, then a dialog is open
+Click "Open estimate summary" to see the Cost Estimate Summary in a separate browser tab.
+
+## 7. Cost Estimate Summary
+
+Verify that the 'Cost Estimate Summary' matches the values filled in Step 4.
+Verify the total estimated cost.
+
+# Report
+
+For report install the dependencies:
+
+- npm install @wdio/junit-reporter --save-dev
+- npm install @wdio/allure-reporter --save-dev
+- npm install @wdio/sync --save-dev
+
+Run `npx wdio ./src/config/wdio.conf.js`
+
+Generate and view allure report
+
+- allure generate allure-results --clean
+- allure open
+
+# Further work to do
+
+For the purpose of the task, many things did not get properly attached, for instance there is room for improvement in the ComputeEngineForm to try to make it more maintainable by using an extended method for the clicks and selects on dropdowns as well as reducing the amount of code and divide it by chunks.
