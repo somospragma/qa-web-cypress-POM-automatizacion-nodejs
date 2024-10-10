@@ -1,8 +1,10 @@
+import CartPage from "../po/pages/cart.page";
 import HomePage from "../po/pages/home.page";
 
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
   const homePage = new HomePage();
+  const cartPage = new CartPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -15,6 +17,7 @@ describe("Automation Exercise - Home Page Tests", () => {
     homePage.clickToCartBtn();
 
     // Verify that cart page is displayed
+    cartPage.verifyCartPageisVisible();
 
     //  Click Proceed To Checkout
 
