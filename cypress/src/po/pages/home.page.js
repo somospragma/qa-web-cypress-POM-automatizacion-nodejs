@@ -9,6 +9,11 @@ class HomePage extends BasePage {
   addToCartClick() {
     this.home.firstProduct.click();
   }
+
+  // Click to cart button
+  clickToCartBtn() {
+    this.notification.cartBtn.click();
+  }
 }
 
 export default HomePage;

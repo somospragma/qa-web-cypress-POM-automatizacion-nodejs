@@ -5,7 +5,7 @@ class BasePage {
   constructor(path) {
     this.path = path || ""; // Ruta relativa si no se pasa ninguna
     this.home = new HomeComponent();
-    //this.Notification = new NotificationComponent();
+    this.notification = new NotificationComponent();
   }
 
   open() {

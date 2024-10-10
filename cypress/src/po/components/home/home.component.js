@@ -1,10 +1,4 @@
-const BaseComponent = require("../common/base.component.js");
-
-class HomeComponent extends BaseComponent {
-  constructor() {
-    super("div#cartModal");
-  }
-
+class HomeComponent {
   // First product selector
   get firstProduct() {
     return cy.get(
