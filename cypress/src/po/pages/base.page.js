@@ -2,14 +2,14 @@ const NotificationComponent = require("../components/home/add-to-cart-notificati
 const HomeComponent = require("../components/home/home.component");
 
 class BasePage {
-  constructor(url) {
-    this.url = url;
+  constructor(path) {
+    this.path = path || ""; // Ruta relativa si no se pasa ninguna
     this.home = new HomeComponent();
     //this.Notification = new NotificationComponent();
   }
 
   open() {
-    return cy.visit(this.url);
+    return cy.visit(this.path); // Visitar la URL base + la ruta
   }
 }
 

@@ -2,7 +2,7 @@ const BasePage = require("./base.page");
 
 class HomePage extends BasePage {
   constructor() {
-    super("div#cartModal");
+    super("/");
   }
 
   // Click en el primer producto para añadir al carrito

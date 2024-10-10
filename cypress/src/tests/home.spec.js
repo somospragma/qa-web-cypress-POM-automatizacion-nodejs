@@ -8,7 +8,7 @@ describe("Automation Exercise - Home Page Tests", () => {
     // Navigate to home page
     homePage.open();
 
-    // Click to 'Signup / Login'
+    // Click to 'Add to cart'
     homePage.addToCartClick();
   });
 });
