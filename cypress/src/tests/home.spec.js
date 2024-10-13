@@ -1,10 +1,12 @@
 import CartPage from "../po/pages/cart.page";
 import HomePage from "../po/pages/home.page";
+import LoginPage from "../po/pages/login.page";
 
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
   const homePage = new HomePage();
   const cartPage = new CartPage();
+  const loginPage = new LoginPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -20,10 +22,16 @@ describe("Automation Exercise - Home Page Tests", () => {
     cartPage.verifyCartPageisVisible();
 
     //  Click Proceed To Checkout
+    cartPage.clickToProceedCheckoutBtn();
 
     // Click 'Register / Login' button
+    cartPage.clickToRegisterOrLoginBtn();
 
     // Fill all details in Signup and create account
+    loginPage.verifyLoginPageisVisible();
+    loginPage.enterName();
+    loginPage.enterEmail();
+    loginPage.clickOnSinUp();
 
     // Verify 'ACCOUNT CREATED!' and click 'Continue' button
 

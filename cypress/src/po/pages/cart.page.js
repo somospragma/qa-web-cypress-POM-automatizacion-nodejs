@@ -9,6 +9,14 @@ class CartPage extends BasePage {
     cy.url().should("include", "/view_cart");
     this.cart.breadCrumbSC.contains("Shopping Cart").should("be.visible");
   }
+
+  clickToProceedCheckoutBtn() {
+    this.cart.proceedCheckoutBtn.click();
+  }
+
+  clickToRegisterOrLoginBtn() {
+    this.checkout.registerOrLoginBtn.click();
+  }
 }
 
 module.exports = CartPage;
