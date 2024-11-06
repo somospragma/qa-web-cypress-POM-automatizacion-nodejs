@@ -2,13 +2,14 @@ import CartPage from "../po/pages/cart.page";
 import HomePage from "../po/pages/home.page";
 import LoginPage from "../po/pages/login.page";
 import SingupPage from "../po/pages/singup.page";
-
+import AccountCreatedPage from "../po/pages/account-created";
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
   const homePage = new HomePage();
   const cartPage = new CartPage();
   const loginPage = new LoginPage();
   const singupPage = new SingupPage();
+  const accountPage = new AccountCreatedPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -36,8 +37,25 @@ describe("Automation Exercise - Home Page Tests", () => {
     loginPage.clickOnSinUp();
     // singup page form details
     singupPage.selectGender("Mrs");
+    singupPage.enterPassword();
+    singupPage.selectDay();
+    singupPage.selectMonth();
+    singupPage.selectYear();
+    //Adress information
+    singupPage.enterFirstName();
+    singupPage.enterLastName();
+    singupPage.enterCompany();
+    singupPage.enterAddress();
+    singupPage.enterAddress2();
+    singupPage.enterCountry();
+    singupPage.enterState();
+    singupPage.enterCity();
+    singupPage.enterZipcode();
+    singupPage.enterMobileNumber();
+    singupPage.clickOnCreateAccount();
     // Verify 'ACCOUNT CREATED!' and click 'Continue' button
-
+    accountPage.validateMessage();
+    accountPage.clickOnContinueBtn();
     // Verify ' Logged in as username' at top
 
     // Click 'Cart' button

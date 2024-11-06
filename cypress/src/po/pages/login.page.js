@@ -16,8 +16,9 @@ class LoginPage extends BasePage {
   }
 
   enterEmail() {
-    cy.log(`Enter the email into placeholder`);
-    this.login.inputEmail.type("uS@correo.com");
+    const randomEmail = `user${Math.floor(Math.random() * 10000)}@correo.com`;
+    cy.log(`Enter the email: ${randomEmail}`);
+    this.login.inputEmail.type(randomEmail);
   }
 
   clickOnSinUp() {
