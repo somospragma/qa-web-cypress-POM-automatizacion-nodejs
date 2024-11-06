@@ -3,6 +3,7 @@ const HomeComponent = require("../components/home/home.component");
 const CartComponent = require("../components/home/cart.component");
 const CheckoutComponent = require("../components/home/checkout-notification.component");
 const LoginComponent = require("../components/home/login.component");
+const AccountComponent = require("../components/home/account-information.component");
 
 class BasePage {
   constructor(path) {
@@ -12,9 +13,11 @@ class BasePage {
     this.cart = new CartComponent();
     this.checkout = new CheckoutComponent();
     this.login = new LoginComponent();
+    this.account = new AccountComponent();
   }
 
   open() {
+    cy.log(`Visit the page https://www.automationexercise.com${this.path}`);
     return cy.visit(this.path); // Visitar la URL base + la ruta
   }
 }

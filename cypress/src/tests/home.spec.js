@@ -1,12 +1,14 @@
 import CartPage from "../po/pages/cart.page";
 import HomePage from "../po/pages/home.page";
 import LoginPage from "../po/pages/login.page";
+import SingupPage from "../po/pages/singup.page";
 
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
   const homePage = new HomePage();
   const cartPage = new CartPage();
   const loginPage = new LoginPage();
+  const singupPage = new SingupPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -32,7 +34,8 @@ describe("Automation Exercise - Home Page Tests", () => {
     loginPage.enterName();
     loginPage.enterEmail();
     loginPage.clickOnSinUp();
-
+    // singup page form details
+    singupPage.selectGender("Mrs");
     // Verify 'ACCOUNT CREATED!' and click 'Continue' button
 
     // Verify ' Logged in as username' at top
