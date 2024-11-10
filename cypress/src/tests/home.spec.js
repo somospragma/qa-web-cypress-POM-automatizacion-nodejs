@@ -1,4 +1,5 @@
 import CartPage from "../po/pages/cart.page";
+import CheckoutPage from "../po/pages/checkout.page";
 import HomePage from "../po/pages/home.page";
 import LoginPage from "../po/pages/login.page";
 import SingupPage from "../po/pages/singup.page";
@@ -10,6 +11,7 @@ describe("Automation Exercise - Home Page Tests", () => {
   const loginPage = new LoginPage();
   const singupPage = new SingupPage();
   const accountPage = new AccountCreatedPage();
+  const checkoutPage = new CheckoutPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -57,13 +59,14 @@ describe("Automation Exercise - Home Page Tests", () => {
     accountPage.validateMessage();
     accountPage.clickOnContinueBtn();
     // Verify ' Logged in as username' at top
-
+    homePage.verifyLoggedAsUsername();
     // Click 'Cart' button
-
+    homePage.clickToCartAtHeader();
     // Click 'Proceed To Checkout' button
-
+    cartPage.clickToProceedCheckoutBtn();
     // Verify Address Details and Review Your Order
-
+    checkoutPage.verifyDeliveryDetails();
+    checkoutPage.verifyBillingDetails();
     // Enter description in comment text area and click 'Place Order'
 
     // Enter payment details: Name on Card, Card Number, CVC, Expiration date

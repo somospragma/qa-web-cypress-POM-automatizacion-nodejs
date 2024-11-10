@@ -16,6 +16,18 @@ class HomePage extends BasePage {
     cy.log(`Click to cart button`);
     this.notification.cartBtn.click();
   }
+
+  // Verify Logged as username
+  verifyLoggedAsUsername() {
+    this.header.loggedAsUsername
+      .should("be.visible")
+      .contains("Logged in as user1", { timeout: 10000 });
+  }
+
+  //Click to cart at header
+  clickToCartAtHeader() {
+    this.header.cart.click();
+  }
 }
 
 export default HomePage;
