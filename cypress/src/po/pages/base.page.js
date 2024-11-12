@@ -6,6 +6,9 @@ const CheckoutNotificationComponent = require("../components/home/checkout-notif
 const CheckoutComponent = require("../components/home/checkout.component");
 const LoginComponent = require("../components/home/login.component");
 const AccountComponent = require("../components/home/account-information.component");
+const PaymentComponent = require("../components/home/payment.component");
+const PaymentDoneComponent = require("../components/home/payment-done.component");
+const DeleteAccountComponent = require("../components/home/delete-account.component");
 
 class BasePage {
   constructor(path) {
@@ -18,6 +21,9 @@ class BasePage {
     this.checkoutAddress = new CheckoutComponent();
     this.login = new LoginComponent();
     this.account = new AccountComponent();
+    this.payment = new PaymentComponent();
+    this.paymentDone = new PaymentDoneComponent();
+    this.deleteAccount = new DeleteAccountComponent();
   }
 
   open() {

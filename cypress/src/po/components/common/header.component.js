@@ -6,6 +6,10 @@ class HeaderComponent {
   get cart() {
     return cy.get("#header li:nth-child(3) a");
   }
+
+  get deleteAccount() {
+    return cy.get("a[href='/delete_account']");
+  }
 }
 
 module.exports = HeaderComponent;

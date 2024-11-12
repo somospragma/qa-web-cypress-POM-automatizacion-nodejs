@@ -4,6 +4,10 @@ import HomePage from "../po/pages/home.page";
 import LoginPage from "../po/pages/login.page";
 import SingupPage from "../po/pages/singup.page";
 import AccountCreatedPage from "../po/pages/account-created";
+import PaymentPage from "../po/pages/payment.page";
+import PaymentDonePage from "../po/pages/payment-done.page";
+import DeleteAccountPage from "../po/pages/delete-account.page";
+
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
   const homePage = new HomePage();
@@ -12,6 +16,9 @@ describe("Automation Exercise - Home Page Tests", () => {
   const singupPage = new SingupPage();
   const accountPage = new AccountCreatedPage();
   const checkoutPage = new CheckoutPage();
+  const paymentPage = new PaymentPage();
+  const paymentDonePage = new PaymentDonePage();
+  const deleteAccountPage = new DeleteAccountPage();
 
   it("should navigate to the homepage and add to cart a product", () => {
     // Navigate to home page
@@ -67,16 +74,20 @@ describe("Automation Exercise - Home Page Tests", () => {
     // Verify Address Details and Review Your Order
     checkoutPage.verifyDeliveryDetails();
     checkoutPage.verifyBillingDetails();
+    checkoutPage.reviewOrder();
     // Enter description in comment text area and click 'Place Order'
-
+    checkoutPage.enterDescription();
+    checkoutPage.clickOnPlaceOrder();
     // Enter payment details: Name on Card, Card Number, CVC, Expiration date
-
+    paymentPage.fillData();
     // Click 'Pay and Confirm Order' button
-
+    paymentPage.clickOnPayAndConfirmOrderBtn();
     // Verify success message 'Your order has been placed successfully!'
-
+    paymentDonePage.validateSuccessMessage();
     // Click 'Delete Account' button
-
+    paymentDonePage.clickOnDeleteAccount();
     // Verify 'ACCOUNT DELETED!' and click 'Continue' button
+    deleteAccountPage.validateDeletedMessage();
+    deleteAccountPage.clickOnContinueBtn();
   });
 });
