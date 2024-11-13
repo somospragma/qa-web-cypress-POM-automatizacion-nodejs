@@ -1,4 +1,4 @@
-class DeleteAccountComponent {
+export class DeleteAccountComponent {
   get accountDeletedTitle() {
     return cy.get("h2[data-qa='account-deleted']");
   }
@@ -16,4 +16,4 @@ class DeleteAccountComponent {
   }
 }
 
-module.exports = DeleteAccountComponent;
+//module.exportss = DeleteAccountComponent;

@@ -1,9 +1,9 @@
-class NotificationComponent {
+export default class NotificationComponent {
   // Btn to continue shopping
   get continueShopingBtn() {
     return cy.get(".modal-footer > .btn");
   }
-  // Message about the product added to teh cart
+  // Message about the product added to the cart
   get addedToCartMessage() {
     return cy.get(".modal-body > :nth-child(1)");
   }
@@ -14,4 +14,4 @@ class NotificationComponent {
   }
 }
 
-module.exports = NotificationComponent;
+//module.exportss = NotificationComponent;

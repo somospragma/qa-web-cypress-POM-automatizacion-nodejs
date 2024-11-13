@@ -1,4 +1,4 @@
-class PaymentComponent {
+export class PaymentComponent {
   get nameOnCardInput() {
     return cy.get("input[name='name_on_card']");
   }
@@ -24,4 +24,4 @@ class PaymentComponent {
   }
 }
 
-module.exports = PaymentComponent;
+//module.exportss = PaymentComponent;

@@ -1,4 +1,4 @@
-class CheckoutComponent {
+export class CheckoutComponent {
   //delivery address
   get deliveryName() {
     return cy.get("#address_delivery > .address_firstname");
@@ -122,4 +122,4 @@ class CheckoutComponent {
   }
 }
 
-module.exports = CheckoutComponent;
+//module.exportss = CheckoutComponent;

@@ -1,6 +1,6 @@
-const BasePage = require("./base.page");
+import BasePage from  "./base.page";
 
-class AccountCreatedPage extends BasePage {
+export class AccountCreatedPage extends BasePage {
   get createdAccountTitle() {
     return cy.get("[data-qa='account-created']");
   }
@@ -43,4 +43,4 @@ class AccountCreatedPage extends BasePage {
   }
 }
 
-module.exports = AccountCreatedPage;
+//module.exportss = AccountCreatedPage;

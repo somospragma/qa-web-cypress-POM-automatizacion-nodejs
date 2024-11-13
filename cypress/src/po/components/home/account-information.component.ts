@@ -1,4 +1,4 @@
-class AccountComponent {
+export class AccountComponent {
   // select gender
   inputGender(gender) {
     const selectors = {
@@ -71,4 +71,4 @@ class AccountComponent {
   }
 }
 
-module.exports = AccountComponent;
+////module.exportss = AccountComponent;

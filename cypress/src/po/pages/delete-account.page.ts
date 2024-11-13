@@ -1,6 +1,6 @@
-const BasePage = require("./base.page");
+import BasePage from  "./base.page";
 
-class DeleteAccountPage extends BasePage {
+export class DeleteAccountPage extends BasePage {
   constructor() {
     super("/delete_account");
   }
@@ -20,4 +20,4 @@ class DeleteAccountPage extends BasePage {
   }
 }
 
-module.exports = DeleteAccountPage;
+//module.exportss = DeleteAccountPage;

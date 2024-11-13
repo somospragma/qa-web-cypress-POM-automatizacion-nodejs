@@ -1,4 +1,4 @@
-class PaymentDoneComponent {
+export class PaymentDoneComponent {
   get titleOrderPlaced() {
     return cy.get("h2[data-qa='order-placed']");
   }
@@ -8,4 +8,4 @@ class PaymentDoneComponent {
   }
 }
 
-module.exports = PaymentDoneComponent;
+//module.exportss = PaymentDoneComponent;

@@ -1,4 +1,5 @@
-class HeaderComponent {
+
+export class HeaderComponent {
   get loggedAsUsername() {
     return cy.get("#header li:nth-child(10) a");
   }
@@ -12,4 +13,4 @@ class HeaderComponent {
   }
 }
 
-module.exports = HeaderComponent;
+

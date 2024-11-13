@@ -1,5 +1,5 @@
-const BasePage = require("./base.page");
-class PaymentPage extends BasePage {
+import BasePage from  "./base.page";
+export class PaymentPage extends BasePage {
   constructor() {
     super("/payment");
   }
@@ -16,4 +16,4 @@ class PaymentPage extends BasePage {
     this.payment.payAndConfirmOrderBtn.click();
   }
 }
-module.exports = PaymentPage;
+//module.exportss = PaymentPage;

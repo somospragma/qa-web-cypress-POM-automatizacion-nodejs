@@ -1,6 +1,6 @@
-const BasePage = require("./base.page");
+import BasePage from  "./base.page";
 
-class HomePage extends BasePage {
+export class HomePage extends BasePage {
   constructor() {
     super("/");
   }

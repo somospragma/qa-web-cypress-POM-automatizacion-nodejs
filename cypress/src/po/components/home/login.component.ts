@@ -1,4 +1,4 @@
-class LoginComponent {
+export class LoginComponent {
   // input Name
   get inputName() {
     return cy.get("input[data-qa='signup-name']");
@@ -13,4 +13,4 @@ class LoginComponent {
   }
 }
 
-module.exports = LoginComponent;
+//module.exportss = LoginComponent;

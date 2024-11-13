@@ -1,4 +1,4 @@
-class HomeComponent {
+export class HomeComponent {
   // First product selector
   get firstProduct() {
     return cy.get(
@@ -7,4 +7,4 @@ class HomeComponent {
   }
 }
 
-module.exports = HomeComponent;
+//module.exportss = HomeComponent;

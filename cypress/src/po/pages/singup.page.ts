@@ -1,6 +1,6 @@
-const BasePage = require("./base.page");
+import BasePage from  "./base.page";
 
-class SingupPage extends BasePage {
+export class SingupPage extends BasePage {
   constructor() {
     super("/signup");
   }
@@ -84,4 +84,4 @@ class SingupPage extends BasePage {
     this.account.createAccountBtn.click();
   }
 }
-module.exports = SingupPage;
+//module.exportss = SingupPage;

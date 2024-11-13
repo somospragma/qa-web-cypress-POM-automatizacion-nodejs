@@ -1,12 +1,12 @@
-import CartPage from "../po/pages/cart.page";
-import CheckoutPage from "../po/pages/checkout.page";
-import HomePage from "../po/pages/home.page";
-import LoginPage from "../po/pages/login.page";
-import SingupPage from "../po/pages/singup.page";
-import AccountCreatedPage from "../po/pages/account-created";
-import PaymentPage from "../po/pages/payment.page";
-import PaymentDonePage from "../po/pages/payment-done.page";
-import DeleteAccountPage from "../po/pages/delete-account.page";
+import {CartPage} from "../po/pages/cart.page";
+import {CheckoutPage} from "../po/pages/checkout.page";
+import {HomePage} from "../po/pages/home.page";
+import {LoginPage} from "../po/pages/login.page";
+import {SingupPage} from "../po/pages/singup.page";
+import {AccountCreatedPage} from "../po/pages/account-created";
+import {PaymentPage} from "../po/pages/payment.page";
+import {PaymentDonePage} from "../po/pages/payment-done.page";
+import {DeleteAccountPage} from "../po/pages/delete-account.page";
 
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances

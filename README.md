@@ -1,123 +1,122 @@
-# Folder Structure
+<h1 align="center">
+  <br>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png"></a>
+  <br>
+  Arquetipo de Cypress con POM para E2E front
+  <br>
+</h1>
+
+<h4 align="center">Proyecto base de <a href="https://github.com/karatelabs/karate" target="_blank">Pragma</a>.</h4>
+
+<p align="center">
+  <a href="https://docs.cypress.io/app/get-started/why-cypress">
+    <img src="https://img.shields.io/badge/Cypress-E2E_Testing-green" alt="Cypress">
+  </a>
+  <a href="https://nodejs.org/en/">
+    <img src="https://img.shields.io/badge/Node_JS-Download-blue?link=https%3A%2F%2Fnodejs.org%2Fen%2F
+    " alt="nodeJS">
+  </a>
+</p>
+
+Este proyecto tiene el propósito de ser una plantilla y guía para la aplicación del patrón de diseño POM con cypress, utilizando el lenguaje TypeScript. Para este objetivo se realizó el flujo de prueba de un sitio web desde el frontend, utilizando diferentes tipos de selectores CSS.
+
+<p align="center">
+  <a href="#topicos">Topicos</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#instalación-y-ejecución">Instalación</a> •
+  <a href="#instalación-y-ejecución"> Ejecución</a> •
+  <a href="#autores">Autores</a> •
+  <a href="#relacionados">Relacionados</a> •
+</p>
+
+El siguiente GIF es de ejemplo, si tienes uno propio reemplazalo, de lo contrario eliminalo.
+![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+
+## Topicos
+
+- TypesScript
+- POM
+- Cypress
+
+## Tecnologias
+
+### This project required:
+
+- [NODE js] version 20+
+- [Cypress] version ^13.15.0
+
+## Instalación
+
+1. Abrir la terminal
+
+2. Navega a la carpeta donde quieres clonar el repositorio
+
+3. Clona el repositorio
+
+```bash
+git clone https://github.com/somospragma/qa-web-cypress-POM-automatizacion-nodejs.git
+```
+
+4. Navega dentro de la carpeta del repositorio clonado
+
+```bash
+cd  qa-web-cypress-POM-automatizacion-nodejs
+```
+
+5. Instala las dependencias
+
+```bash
+npm install
+npm install cypress
+```
+
+Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-web-cypress-POM-automatizacion-nodejs)
+
+## Ejecución
+
+### **Run tests in different environments:**
 
 ```
-└── 📁cypress
-    └── 📁po
-        └── 📁components
-            └── 📁common
-                └── base.component.js
-                └── header.component.js
-            └── 📁computeEngineForm
-                └── computeEngineForm.component.js
-                └── costDetail.component.js
-            └── 📁costSummaryDialog
-                └── costSummaryDialog.component.js
-            └── 📁pricingCalculator
-                └── productsDialog.component.js
-        └── index.js
-        └── 📁pages
-            └── base.page.js
-            └── computeEngineForm.page.js
-            └── costEstimateSummary.page.js
-            └── homeGoogleCloud.page.js
-            └── index.js
-            └── pricingCalculator.page.js
-            └── searchResults.page.js
-    └── 📁tests
-        └── googleCloud.tests.js
-    └── 📁utils
-        └── google-cloud-computing.dataset.json
+npx cypress -Denvironment=default
+
 ```
 
-# Usage
+### 🛠️ Cómo ejecutar los test:
 
-For use this project clone from the repository https://github.com/MafeJh/Task3.git and install WDIO with `npm init wdio .` command. After that, please go to your wdio.conf.js and be sure you are exporting wih exports.config instead of ECMAS type module. Also go to your package.json and delete `"type": "modules"`, later ypu can add to scripts the route for the test: `"wdio": "wdio run ./src/config/wdio.conf.js"`.
+```
+- El comando `npm run cy:open`, para ejecutar los test en la interfaz gráfica de cypress.
+- El comando `npm run cy:run`, para ejecutar los test desde la terminal.
+- El comando `npm run cy:verify`, valida que la instalación de cypress es éxitosa.
+```
 
-# Run the test
+### 🛠️ Ejecutar test en el navegador web Chrome:
 
-- `wdio:smoke`
-- `wdio:prod`
-- `wdio:dev`
+```
+- El comando `npm run cy:open`, para ejecutar cuando abres el launchpad de cypress, selecciona el navegador Chrome.
+- El comando `npm run cy:run --browser chrome`, permite ejecutar desde la terminal modo headless para el navegador Chrome.
+```
 
-You can work with:
+### 🛠️ Ejecutar test en el navegador web Edge:
 
-- `NODE_ENV` With the environment values like `dev` and `prod`
+```
+- El comando `npm run cy:open`, cuando abres el launchpad de cypress, selecciona el navegador Edge.
+- El comando `npm run cy:run --browser Edge`, permite ejecutar desde la terminal modo headless para el navegador Edge.
+```
 
-- `SUITE` With the types of tests like `smoke` and `regression`
+###Soporte
 
-The smoke test ensure the main path it's Ok, validating the items exist.
+En caso de requerir soporte para esta automatización dirigirse al chapter de calidad de software de Pragma S.A y comuniquese con los autores.
 
-The prod environment has different values from dev environment, but runs in the same script.
+## Autores:
 
-# Test Flow
+| [<img src="https://lh3.googleusercontent.com/a-/AD_cMMSNeU-DRdaCVdZsA__CiiaMlIksLUGso-17AHT5=s240-p-k-rw-no" width=115><br><sub>María Fernanda Jiménez Heredia.</sub>](https://gitlab.com/fernanda.jimenezh) <br/> |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
-The flow consist in go to the page Google Cloud Platform and look for the Pricing Calculator feature and select GC Compute engine, then add the products and finally validate the summary cost price.
+### Licencia
 
-## 1. Open the Google Cloud Platform
+Proyecto open source.
 
-Navigate to Google Cloud.
-Search for the Pricing Calculator:
-Click on the search icon at the top of the portal page.
-Enter "Google Cloud Platform Pricing Calculator" into the search field.
-Perform the search.
+## Relacionados
 
-## 2. Access the Calculator
-
-Click on "Google Cloud Platform Pricing Calculator" from the search results.
-You will be redirected to the calculator page.
-
-## 3. Select Compute Engine product from the pricing calculator page
-
-Click on "add to estimate" then a dialog is open with some products
-Click on the "Compute Engine" card.
-
-## 4. Fill the Compute Engine Form
-
-Fill out the form with the following data:
-Number of instances: 4
-Operating System / Software: Free: paid-sles OS
-Provisioning model: Regular
-Machine Family: General purpose
-Series: N1
-Machine type: n1-standard-2 (vCPUs: 2, RAM: 7.5 GB)
-Add GPUs:
-GPU type: NVIDIA Tesla P4
-Number of GPUs: 2
-Local SSD: 2x375 Gb
-Datacenter location: Northern Virginia (us-east4)
-Committed usage: 1 Year
-Leave other options in their default state.
-
-## 5. Estimate the Cost
-
-Still in the same page of Compute Engine, in the right there is cost details section
-Verify the price calculated in the right section of the calculator in the line “Total Estimated Cost: USD ${amount} per 1 month”.
-
-## 6. Share and Verify the Estimate
-
-Click on "Share" to see the Total estimated cost, then a dialog is open
-Click "Open estimate summary" to see the Cost Estimate Summary in a separate browser tab.
-
-## 7. Cost Estimate Summary
-
-Verify that the 'Cost Estimate Summary' matches the values filled in Step 4.
-Verify the total estimated cost.
-
-# Report
-
-For report install the dependencies:
-
-- npm install @wdio/junit-reporter --save-dev
-- npm install @wdio/allure-reporter --save-dev
-- npm install @wdio/sync --save-dev
-
-Run `npx wdio ./src/config/wdio.conf.js`
-
-Generate and view allure report
-
-- allure generate allure-results --clean
-- allure open
-
-# Further work to do
-
-For the purpose of the task, many things did not get properly attached, for instance there is room for improvement in the ComputeEngineForm to try to make it more maintainable by using an extended method for the clicks and selects on dropdowns as well as reducing the amount of code and divide it by chunks.
+- [Proyecto base Cypress con Screenplay](https://github.com/somospragma/)
+- [Proyecto base Cypress con Commands](https://github.com/somospragma/)

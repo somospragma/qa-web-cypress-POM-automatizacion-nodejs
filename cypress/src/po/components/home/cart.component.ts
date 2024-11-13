@@ -1,4 +1,4 @@
-class CartComponent {
+export class CartComponent {
   // second elemento from breadcrumb
   get breadCrumbSC() {
     return cy.get("ol.breadcrumb >li:nth-child(2)");
@@ -8,4 +8,4 @@ class CartComponent {
   }
 }
 
-module.exports = CartComponent;
+//module.exportss = CartComponent;
