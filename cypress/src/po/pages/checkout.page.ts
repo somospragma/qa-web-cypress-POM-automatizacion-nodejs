@@ -1,10 +1,11 @@
-import BasePage from  "./base.page";
+import BasePage from "./base.page";
 
 export class CheckoutPage extends BasePage {
   constructor() {
-    super("/checkout");
+    super("/checkout"); // Set the path for the Checkout page
   }
 
+  // Method to verify delivery details on the page
   verifyDeliveryDetails() {
     this.checkoutAddress.deliveryName.contains("Juan");
     this.checkoutAddress.deliveryLastName.contains("Aguirre");
@@ -17,6 +18,7 @@ export class CheckoutPage extends BasePage {
     this.checkoutAddress.deliveryMobileNumber.contains("321");
   }
 
+  // Method to verify billing details on the page
   verifyBillingDetails() {
     this.checkoutAddress.billingName.contains("Juan");
     this.checkoutAddress.billingLastName.contains("Aguirre");
@@ -30,6 +32,7 @@ export class CheckoutPage extends BasePage {
     this.checkoutAddress.deliveryMobileNumber.contains("321");
   }
 
+  // Method to review order details on the page
   reviewOrder() {
     this.checkoutAddress.item.should(
       "have.attr",
@@ -43,13 +46,13 @@ export class CheckoutPage extends BasePage {
     this.checkoutAddress.totalAmount.contains("Rs. 500");
   }
 
+  // Method to enter a message in the description textarea
   enterDescription() {
     this.checkoutAddress.messageTextArea.type("Este es un mensaje de prueba");
   }
 
+  // Method to click the "Place Order" button
   clickOnPlaceOrder() {
     this.checkoutAddress.placeOrderBtn.click();
   }
 }
-
-//module.exportss = CheckoutPage;

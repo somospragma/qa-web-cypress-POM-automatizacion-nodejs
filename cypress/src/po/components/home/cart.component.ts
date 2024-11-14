@@ -1,5 +1,5 @@
 export class CartComponent {
-  // second elemento from breadcrumb
+  // second element from breadcrumb
   get breadCrumbSC() {
     return cy.get("ol.breadcrumb >li:nth-child(2)");
   }

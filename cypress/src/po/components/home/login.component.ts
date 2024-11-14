@@ -12,5 +12,3 @@ export class LoginComponent {
     return cy.get("button[data-qa='signup-button']");
   }
 }
-
-//module.exportss = LoginComponent;

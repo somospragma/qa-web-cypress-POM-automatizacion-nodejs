@@ -1,5 +1,5 @@
 export class CheckoutComponent {
-  //delivery address
+  // Delivery address fields
   get deliveryName() {
     return cy.get("#address_delivery > .address_firstname");
   }
@@ -37,14 +37,16 @@ export class CheckoutComponent {
       "#address_delivery > .address_city.address_state_name.address_postcode "
     );
   }
+
   get deliveryCountry() {
     return cy.get("#address_delivery > .address_country_name");
   }
+
   get deliveryMobileNumber() {
     return cy.get("#address_delivery > .address_phone");
   }
 
-  //Billing address
+  // Billing address fields
   get billingName() {
     return cy.get("#address_invoice > .address_firstname");
   }
@@ -65,30 +67,33 @@ export class CheckoutComponent {
     return cy.get("#address_invoice > li:nth-child(5).address_address1");
   }
 
-  get deliveryCity() {
+  get billingCity() {
     return cy.get(
       "#address_invoice > .address_city.address_state_name.address_postcode"
     );
   }
 
-  get deliveryState() {
+  get billingState() {
     return cy.get(
       "#address_invoice > .address_city.address_state_name.address_postcode "
     );
   }
 
-  get deliveryZipcode() {
+  get billingZipcode() {
     return cy.get(
       "#address_invoice > .address_city.address_state_name.address_postcode "
     );
   }
-  get deliveryCountry() {
+
+  get billingCountry() {
     return cy.get("#address_invoice > .address_country_name");
   }
-  get deliveryMobileNumber() {
+
+  get billingMobileNumber() {
     return cy.get("#address_invoice > .address_phone");
   }
 
+  // Product details in the order summary
   get item() {
     return cy.get("#product-1 a img");
   }
@@ -113,13 +118,13 @@ export class CheckoutComponent {
     return cy.get("tr:nth-child(2) p.cart_total_price");
   }
 
+  // Text area for entering a message during checkout
   get messageTextArea() {
     return cy.get('textarea[name="message"]');
   }
 
+  // Button to place the order
   get placeOrderBtn() {
     return cy.get("a[href='/payment']");
   }
 }
-
-//module.exportss = CheckoutComponent;

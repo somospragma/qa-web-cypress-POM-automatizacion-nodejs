@@ -1,22 +1,27 @@
-import BasePage from  "./base.page";
+import BasePage from "./base.page";
 
 export class AccountCreatedPage extends BasePage {
+  // Property for the title element after account creation
   get createdAccountTitle() {
     return cy.get("[data-qa='account-created']");
   }
 
+  // Property for the first paragraph following the created account title
   get createdAccFirstParagraph() {
     return cy.get("[data-qa='account-created'] + p");
   }
 
+  // Property for the second paragraph in the form
   get createdAccSecondParagraph() {
     return cy.get("#form p:nth-child(3)");
   }
 
+  // Property for the 'Continue' button
   get continueBtn() {
     return cy.get("[data-qa='continue-button']");
   }
 
+  // Method to validate account creation messages
   validateMessage() {
     this.createdAccountTitle.invoke("text").should("equal", "Account Created!");
 
@@ -35,6 +40,7 @@ export class AccountCreatedPage extends BasePage {
       );
   }
 
+  // Method to click on the 'Continue' button after validation
   clickOnContinueBtn() {
     this.continueBtn
       .should("have.attr", "href", "/")
@@ -43,4 +49,5 @@ export class AccountCreatedPage extends BasePage {
   }
 }
 
-//module.exportss = AccountCreatedPage;
+// Uncomment to export if needed
+// export default AccountCreatedPage;

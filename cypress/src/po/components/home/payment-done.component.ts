@@ -7,5 +7,3 @@ export class PaymentDoneComponent {
     return cy.get("h2[data-qa='order-placed'] + p");
   }
 }
-
-//module.exportss = PaymentDoneComponent;

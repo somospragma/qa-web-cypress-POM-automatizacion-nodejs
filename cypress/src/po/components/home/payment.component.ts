@@ -23,5 +23,3 @@ export class PaymentComponent {
     return cy.get("button#submit");
   }
 }
-
-//module.exportss = PaymentComponent;

@@ -6,5 +6,3 @@ export class HomeComponent {
     );
   }
 }
-
-//module.exportss = HomeComponent;

@@ -1,12 +1,12 @@
-import {CartPage} from "../po/pages/cart.page";
-import {CheckoutPage} from "../po/pages/checkout.page";
-import {HomePage} from "../po/pages/home.page";
-import {LoginPage} from "../po/pages/login.page";
-import {SingupPage} from "../po/pages/singup.page";
-import {AccountCreatedPage} from "../po/pages/account-created";
-import {PaymentPage} from "../po/pages/payment.page";
-import {PaymentDonePage} from "../po/pages/payment-done.page";
-import {DeleteAccountPage} from "../po/pages/delete-account.page";
+import { CartPage } from "@/pages/cart.page";
+import { CheckoutPage } from "@/pages/checkout.page";
+import { HomePage } from "@/pages/home.page";
+import { LoginPage } from "@/pages/login.page";
+import { SingupPage } from "@/pages/singup.page";
+import { AccountCreatedPage } from "@/pages/account-created";
+import { PaymentPage } from "@/pages/payment.page";
+import { PaymentDonePage } from "@/pages/payment-done.page";
+import { DeleteAccountPage } from "@/pages/delete-account.page";
 
 describe("Automation Exercise - Home Page Tests", () => {
   // Instances
@@ -31,7 +31,7 @@ describe("Automation Exercise - Home Page Tests", () => {
     homePage.clickToCartBtn();
 
     // Verify that cart page is displayed
-    cartPage.verifyCartPageisVisible();
+    cartPage.verifyCartPageIsVisible();
 
     //  Click Proceed To Checkout
     cartPage.clickToProceedCheckoutBtn();
@@ -44,13 +44,15 @@ describe("Automation Exercise - Home Page Tests", () => {
     loginPage.enterName();
     loginPage.enterEmail();
     loginPage.clickOnSinUp();
+
     // singup page form details
-    singupPage.selectGender("Mrs");
+    singupPage.selectGender("Mrs"); // Type-safe with "Mr" | "Mrs"
     singupPage.enterPassword();
     singupPage.selectDay();
     singupPage.selectMonth();
     singupPage.selectYear();
-    //Adress information
+
+    // Address information
     singupPage.enterFirstName();
     singupPage.enterLastName();
     singupPage.enterCompany();
@@ -62,30 +64,41 @@ describe("Automation Exercise - Home Page Tests", () => {
     singupPage.enterZipcode();
     singupPage.enterMobileNumber();
     singupPage.clickOnCreateAccount();
+
     // Verify 'ACCOUNT CREATED!' and click 'Continue' button
     accountPage.validateMessage();
     accountPage.clickOnContinueBtn();
-    // Verify ' Logged in as username' at top
+
+    // Verify 'Logged in as username' at top
     homePage.verifyLoggedAsUsername();
+
     // Click 'Cart' button
     homePage.clickToCartAtHeader();
+
     // Click 'Proceed To Checkout' button
     cartPage.clickToProceedCheckoutBtn();
+
     // Verify Address Details and Review Your Order
     checkoutPage.verifyDeliveryDetails();
     checkoutPage.verifyBillingDetails();
     checkoutPage.reviewOrder();
+
     // Enter description in comment text area and click 'Place Order'
     checkoutPage.enterDescription();
     checkoutPage.clickOnPlaceOrder();
+
     // Enter payment details: Name on Card, Card Number, CVC, Expiration date
     paymentPage.fillData();
+
     // Click 'Pay and Confirm Order' button
     paymentPage.clickOnPayAndConfirmOrderBtn();
+
     // Verify success message 'Your order has been placed successfully!'
     paymentDonePage.validateSuccessMessage();
+
     // Click 'Delete Account' button
     paymentDonePage.clickOnDeleteAccount();
+
     // Verify 'ACCOUNT DELETED!' and click 'Continue' button
     deleteAccountPage.validateDeletedMessage();
     deleteAccountPage.clickOnContinueBtn();

@@ -1,19 +1,19 @@
-// Importar los componentes usando import en lugar de require
+// Import components using ES6 import syntax
 import NotificationComponent from "@/po/components/home/add-to-cart-notification.component";
-import {HomeComponent} from "@/po/components/home/home.component";
-import {HeaderComponent} from "@/components/common/header.component";
-import {CartComponent} from "@/po/components/home/cart.component";
-import {CheckoutNotificationComponent} from "@/po/components/home/checkout-notification.component";
-import {CheckoutComponent} from "@/po/components/home/checkout.component";
-import {LoginComponent} from "@/components/home/login.component";
-import {AccountComponent} from "@/components/home/account-information.component";
-import {PaymentComponent} from "@/po/components/home/payment.component";
-import {PaymentDoneComponent} from "@/po/components/home/payment-done.component";
-import {DeleteAccountComponent} from "@/po/components/home/delete-account.component";
+import { HomeComponent } from "@/po/components/home/home.component";
+import { HeaderComponent } from "@/components/common/header.component";
+import { CartComponent } from "@/po/components/home/cart.component";
+import { CheckoutNotificationComponent } from "@/po/components/home/checkout-notification.component";
+import { CheckoutComponent } from "@/po/components/home/checkout.component";
+import { LoginComponent } from "@/components/home/login.component";
+import { AccountComponent } from "@/components/home/account-information.component";
+import { PaymentComponent } from "@/po/components/home/payment.component";
+import { PaymentDoneComponent } from "@/po/components/home/payment-done.component";
+import { DeleteAccountComponent } from "@/po/components/home/delete-account.component";
 
-// Definir la clase BasePage
+// Define the BasePage class
 class BasePage {
-  private path: string; // Tipo de 'path'
+  private path: string; // Path for the page route
   public home: HomeComponent;
   public header: HeaderComponent;
   public notification: NotificationComponent;
@@ -26,10 +26,10 @@ class BasePage {
   public paymentDone: PaymentDoneComponent;
   public deleteAccount: DeleteAccountComponent;
 
-  // El constructor acepta un parámetro de tipo string para la ruta
+  // Constructor accepts a path parameter of type string
   constructor(path: string = "") {
     this.path = path;
-    // Inicializar los componentes
+    // Initialize components
     this.home = new HomeComponent();
     this.header = new HeaderComponent();
     this.notification = new NotificationComponent();
@@ -43,12 +43,12 @@ class BasePage {
     this.deleteAccount = new DeleteAccountComponent();
   }
 
-  // Método para abrir la página en Cypress
+  // Method to open the page in Cypress
   open() {
-    cy.log(`Visit the page https://www.automationexercise.com${this.path}`);
-    return cy.visit(this.path); // Visitar la URL base + la ruta
+    cy.log(`Visiting page at https://www.automationexercise.com${this.path}`);
+    return cy.visit(this.path); // Navigate to base URL + path
   }
 }
 
-// Exportar la clase BasePage
+// Export the BasePage class
 export default BasePage;
