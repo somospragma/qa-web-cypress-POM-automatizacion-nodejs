@@ -13,15 +13,13 @@
     <img src="https://img.shields.io/badge/Cypress-E2E_Testing-green" alt="Cypress">
   </a>
   <a href="https://nodejs.org/en/">
-    <img src="https://img.shields.io/badge/Node_JS-Download-blue?link=https%3A%2F%2Fnodejs.org%2Fen%2F
-    " alt="nodeJS">
+    <img src="https://img.shields.io/badge/Node_JS-Download-blue?link=https%3A%2F%2Fnodejs.org%2Fen%2F" alt="nodeJS">
   </a>
 </p>
 
 Este proyecto tiene el propósito de ser una plantilla y guía para la aplicación del patrón de diseño POM con cypress, utilizando el lenguaje TypeScript. Para este objetivo se realizó el flujo de prueba de un sitio web desde el frontend, utilizando diferentes tipos de selectores CSS.
 
 <p align="center">
-  <a href="#topicos">Topicos</a> •
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#instalación-y-ejecución">Instalación</a> •
   <a href="#instalación-y-ejecución"> Ejecución</a> •
@@ -29,16 +27,11 @@ Este proyecto tiene el propósito de ser una plantilla y guía para la aplicaci�
   <a href="#relacionados">Relacionados</a> •
 </p>
 
-El siguiente GIF es de ejemplo, si tienes uno propio reemplazalo, de lo contrario eliminalo.
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
-## Topicos
+## Tecnologias
 
 - TypesScript
 - POM
 - Cypress
-
-## Tecnologias
 
 ### This project required:
 
@@ -74,36 +67,21 @@ Puedes descargar el proyecto en el enlace [download](https://github.com/somospra
 
 ## Ejecución
 
-### **Run tests in different environments:**
+### 🛠️ Cómo ejecutar los test por terminal de comandos:
 
 ```
-npx cypress -Denvironment=default
-
-```
-
-### 🛠️ Cómo ejecutar los test:
-
-```
-- El comando `npm run cy:open`, para ejecutar los test en la interfaz gráfica de cypress.
-- El comando `npm run cy:run`, para ejecutar los test desde la terminal.
-- El comando `npm run cy:verify`, valida que la instalación de cypress es éxitosa.
-```
-
-### 🛠️ Ejecutar test en el navegador web Chrome:
-
-```
-- El comando `npm run cy:open`, para ejecutar cuando abres el launchpad de cypress, selecciona el navegador Chrome.
+- El comando `npm run cy:run`, para ejecutar los test desde la terminal en chrome.
 - El comando `npm run cy:run --browser chrome`, permite ejecutar desde la terminal modo headless para el navegador Chrome.
-```
-
-### 🛠️ Ejecutar test en el navegador web Edge:
-
-```
-- El comando `npm run cy:open`, cuando abres el launchpad de cypress, selecciona el navegador Edge.
 - El comando `npm run cy:run --browser Edge`, permite ejecutar desde la terminal modo headless para el navegador Edge.
 ```
 
-###Soporte
+### 🛠️ Ejecutar test en el navegador web:
+
+```
+- El comando `npm run cy:open`, para ejecutar cuando abres el launchpad de cypress, selecciona el navegador que prefieras, entre Chrome, Edge, Electron y Firefox.
+```
+
+### Soporte
 
 En caso de requerir soporte para esta automatización dirigirse al chapter de calidad de software de Pragma S.A y comuniquese con los autores.
 
