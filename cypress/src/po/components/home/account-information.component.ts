@@ -59,8 +59,8 @@ export class AccountComponent {
   get country() {
     return cy
       .get("select[id='country']")
-      .select("Israel")
-      .should("have.value", "Israel");
+      .select("Canada")
+      .should("have.value", "Canada");
   }
 
   get state() {
