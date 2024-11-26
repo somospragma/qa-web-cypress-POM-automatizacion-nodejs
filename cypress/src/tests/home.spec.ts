@@ -45,8 +45,8 @@ describe("Automation Exercise - Home Page Tests", () => {
     loginPage.enterEmail();
     loginPage.clickOnSinUp();
 
-    // singup page form details
-    singupPage.selectGender("Mrs"); // Type-safe with "Mr" | "Mrs"
+    // Singup page form details
+    singupPage.selectGender("Mrs"); // "Mr" | "Mrs"
     singupPage.enterPassword();
     singupPage.selectDay();
     singupPage.selectMonth();

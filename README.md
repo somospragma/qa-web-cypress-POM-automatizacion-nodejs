@@ -93,8 +93,3 @@ En caso de requerir soporte para esta automatización dirigirse al chapter de ca
 ### Licencia
 
 Proyecto open source.
-
-## Relacionados
-
-- [Proyecto base Cypress con Screenplay](https://github.com/somospragma/)
-- [Proyecto base Cypress con Commands](https://github.com/somospragma/)

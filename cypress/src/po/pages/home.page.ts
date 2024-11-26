@@ -21,7 +21,7 @@ export class HomePage extends BasePage {
   verifyLoggedAsUsername() {
     this.header.loggedAsUsername
       .should("be.visible")
-      .contains("Logged in as user1", { timeout: 10000 });
+      .contains("Logged in as John", { timeout: 10000 });
   }
 
   // Method to click the cart button in the header
