@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom"],
+    "types": ["cypress", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./cypress/src/*"],
+      "@/components/*": ["./cypress/src/po/components/*"],
+      "@/pages/*": ["./cypress/src/po/pages/*"]
+    },
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "module": "ESNext"
+  },
+  "include": ["**/*.ts"]
+}
