@@ -1,23 +1,26 @@
+import { CreditCardData } from "@/utils/models/credit-card.model";
+import { PaymentComponent } from "../components/payment/payment.component";
 import BasePage from "./base.page";
 
 export class PaymentPage extends BasePage {
+  payment: PaymentComponent = new PaymentComponent();
   constructor() {
-    super("/payment"); // Set the path for the payment page
+    super("/payment"); 
   }
 
-  // Method to fill payment data
-  fillData() {
+  fillData(name: string, creditCardData: CreditCardData) {
+    const { cardNumber, cvc, expirationMonth, expirationYear } = creditCardData;
     cy.log(`Fill payment data`);
-    this.payment.nameOnCardInput.type("John"); // Enter the name on the card
-    this.payment.cardNumberInput.type("000000123"); // Enter the card number
-    this.payment.cvcInput.type("456"); // Enter the card CVC
-    this.payment.expirationMonthInput.type("01"); // Enter the expiration month
-    this.payment.expirationYearInput.type("2030"); // Enter the expiration year
+    this.payment.nameOnCardInput.type(name); 
+    this.payment.cardNumberInput.type(cardNumber); 
+    this.payment.cvcInput.type(cvc); 
+    this.payment.expirationMonthInput.type(expirationMonth); 
+    this.payment.expirationYearInput.type(expirationYear); 
   }
 
-  // Method to click the 'Pay and Confirm Order' button
+
   clickOnPayAndConfirmOrderBtn() {
     cy.log(`Click the 'Pay and Confirm Order' button`);
-    this.payment.payAndConfirmOrderBtn.click(); // Click on the payment button to confirm the order
+    this.payment.payAndConfirmOrderBtn.click(); 
   }
 }

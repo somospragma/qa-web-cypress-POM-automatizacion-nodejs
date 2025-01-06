@@ -1,5 +1,5 @@
 export class LoginComponent {
-  // input Name
+
   get inputName() {
     return cy.get("input[data-qa='signup-name']");
   }

@@ -1,22 +1,29 @@
+import { AccountDeletedMessages } from "@/utils/models/account.model";
+import { DeleteAccountComponent } from "../components/account/delete-account.component";
 import BasePage from "./base.page";
 
 export class DeleteAccountPage extends BasePage {
+  deleteAccount: DeleteAccountComponent = new DeleteAccountComponent();
+
   constructor() {
-    super("/delete_account"); // Set the path for the Delete Account page
+    super("/delete_account");
   }
 
-  // Method to validate the deleted account message
-  validateDeletedMessage() {
-    this.deleteAccount.accountDeletedTitle.contains("Account Deleted!");
+  validateDeletedMessages(messages: AccountDeletedMessages) {
+    const {
+      accountDeletedTitle,
+      accountDeletedFirstParagraph,
+      accountDeletedSecondParagraph,
+    } = messages;
+    this.deleteAccount.accountDeletedTitle.contains(accountDeletedTitle);
     this.deleteAccount.accountDeletedFirstParagraph.contains(
-      "Your account has been permanently deleted!"
+      accountDeletedFirstParagraph
     );
     this.deleteAccount.accountDeletedSecondParagraph.contains(
-      "You can create new account to take advantage of member privileges to enhance your online shopping experience with us."
+      accountDeletedSecondParagraph
     );
   }
 
-  // Method to click on the "Continue" button after account deletion
   clickOnContinueBtn() {
     this.deleteAccount.continueBtn.click();
   }

@@ -1,0 +1,10 @@
+{
+  "product": {
+    "image": "get_product_picture/1",
+    "description": "Blue Top",
+    "price": "Rs. 500",
+    "quantity": "1"
+  },
+  "totalAmount": "Rs. 500",
+  "messageTextArea": "This is a test message!"
+}

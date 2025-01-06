@@ -1,32 +1,36 @@
+import { LoginComponent } from "../components/login/login.component";
 import BasePage from "./base.page";
 
 export class LoginPage extends BasePage {
+  login: LoginComponent = new LoginComponent();
+
   constructor() {
-    super("/login"); // Set the path for the Login page
+    super("/login"); 
   }
 
-  // Method to verify if the Login page is visible
-  verifyLoginPageisVisible() {
+  verifyLoginPageIsVisible() {
     cy.log(`Verify that LoginPage is visible`);
-    cy.url().should("include", "/login"); // Check that the URL includes '/login'
+    cy.url().should("include", "/login"); 
   }
 
-  // Method to enter the username into the name field
-  enterName() {
+  enterName(name: string) {
     cy.log(`Enter the name into placeholder`);
-    this.login.inputName.type("John"); // Type '"John"' into the name input field
+    this.login.inputName.type(name);
   }
 
-  // Method to enter a random email into the email field
-  enterEmail() {
-    const randomEmail = `John${Math.floor(Math.random() * 10000)}@correo.com`; // Generate a random email
-    cy.log(`Enter the email: ${randomEmail}`);
-    this.login.inputEmail.type(randomEmail); // Type the random email into the email input field
+  enterEmail(email: string) {
+    cy.log(`Enter the email: ${email}`);
+    this.login.inputEmail.type(email); 
   }
 
-  // Method to click the Sign Up button
-  clickOnSinUp() {
+  clickOnSignUp() {
     cy.log(`Click to SignUp Button`);
-    this.login.singUpBtn.click(); // Click the Sign Up button
+    this.login.singUpBtn.click(); 
+  }
+
+  signUp(name: string, email: string) {
+    this.enterName(name);
+    this.enterEmail(email);
+    this.clickOnSignUp();
   }
 }

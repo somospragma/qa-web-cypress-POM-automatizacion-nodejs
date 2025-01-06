@@ -13,7 +13,8 @@
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
-    "module": "ESNext"
+    "module": "ESNext",
+    "resolveJsonModule": true // It is required when we work with JSON files so then we can import them.
   },
   "include": ["**/*.ts"]
 }

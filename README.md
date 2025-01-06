@@ -85,7 +85,9 @@ Puedes descargar el proyecto en el enlace [download](https://github.com/somospra
 
 En caso de requerir soporte para esta automatización dirigirse al chapter de calidad de software de Pragma S.A y comuniquese con los autores.
 
-## Autores:
+Nota: Si la ejecución se detiene en el proceso del login, posiblemente es que en una ejecución pasada no se llegó al punto de eliminar la cuenta. Se debe loguear con el correo y la contraseña del JSON file account.data.json y eliminarla manualmente en el sitio web con la opción del header "delete account".
+
+## Autor:
 
 | [<img src="https://lh3.googleusercontent.com/a-/AD_cMMSNeU-DRdaCVdZsA__CiiaMlIksLUGso-17AHT5=s240-p-k-rw-no" width=115><br><sub>María Fernanda Jiménez Heredia.</sub>](https://gitlab.com/fernanda.jimenezh) <br/> |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
