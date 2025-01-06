@@ -6,7 +6,7 @@ import CreditCardData from "@/utils/data/credit-card.data.json";
 import PaymentDone from "@/utils/data/payment-done.data.json";
 import AccountDeleted from "@/utils/data/delete-account.data.json";
 
-describe("Automation Exercise - Home Page Tests", () => {
+describe("Automation Exercise", () => {
   // Instances
   let homePage = pages("home");
   let cartPage = pages("cart");
