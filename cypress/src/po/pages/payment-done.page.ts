@@ -1,22 +1,26 @@
+import { PaymentDoneComponent } from "../components/payment/payment-done.component";
 import BasePage from "./base.page";
 
 export class PaymentDonePage extends BasePage {
+  paymentDone: PaymentDoneComponent = new PaymentDoneComponent();
+
   constructor() {
-    super("/payment_done/500"); // Set the path for the payment confirmation page
+    super("/payment_done/500"); 
   }
 
-  // Method to validate the success message on the Payment Done page
-  validateSuccessMessage() {
+  validateSuccessMessage(
+    orderPlacedMessage: string,
+    orderConfirmedMessage: string
+  ) {
     cy.log(`Validate success message`);
-    this.paymentDone.titleOrderPlaced.contains("Order Placed!"); // Check if the order placed message is visible
+    this.paymentDone.titleOrderPlaced.contains(orderPlacedMessage); 
     this.paymentDone.paragraphOrderConfirmed.contains(
-      "Congratulations! Your order has been confirmed!" // Check if the order confirmation message is visible
+      orderConfirmedMessage 
     );
   }
 
-  // Method to click on the Delete Account button from the header
   clickOnDeleteAccount() {
     cy.log(`Click on Delete Account button`);
-    this.header.deleteAccount.click(); // Click the 'Delete Account' button from the header
+    this.header.deleteAccount.click(); 
   }
 }

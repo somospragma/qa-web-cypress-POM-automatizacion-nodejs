@@ -1,46 +1,36 @@
+import { AccountMessages } from "@/utils/models/account.model";
 import BasePage from "./base.page";
-
 export class AccountCreatedPage extends BasePage {
-  // Property for the title element after account creation
+
   get createdAccountTitle() {
     return cy.get("[data-qa='account-created']");
   }
 
-  // Property for the first paragraph following the created account title
-  get createdAccFirstParagraph() {
+  get createdAccountFirstParagraph() {
     return cy.get("[data-qa='account-created'] + p");
   }
 
-  // Property for the second paragraph in the form
-  get createdAccSecondParagraph() {
+  get createdAccountSecondParagraph() {
     return cy.get("#form p:nth-child(3)");
   }
 
-  // Property for the 'Continue' button
   get continueBtn() {
     return cy.get("[data-qa='continue-button']");
   }
 
-  // Method to validate account creation messages
-  validateMessage() {
-    this.createdAccountTitle.invoke("text").should("equal", "Account Created!");
+  validateMessages(messages: AccountMessages) {
+    const { accountCreated, congratulations, privileges } = messages;
+    this.createdAccountTitle.invoke("text").should("equal", accountCreated);
 
-    this.createdAccFirstParagraph
+    this.createdAccountFirstParagraph
       .invoke("text")
-      .should(
-        "equal",
-        "Congratulations! Your new account has been successfully created!"
-      );
+      .should("equal", congratulations);
 
-    this.createdAccSecondParagraph
+    this.createdAccountSecondParagraph
       .invoke("text")
-      .should(
-        "equal",
-        "You can now take advantage of member privileges to enhance your online shopping experience with us."
-      );
+      .should("equal", privileges);
   }
 
-  // Method to click on the 'Continue' button after validation
   clickOnContinueBtn() {
     this.continueBtn
       .should("have.attr", "href", "/")
@@ -49,5 +39,3 @@ export class AccountCreatedPage extends BasePage {
   }
 }
 
-// Uncomment to export if needed
-// export default AccountCreatedPage;

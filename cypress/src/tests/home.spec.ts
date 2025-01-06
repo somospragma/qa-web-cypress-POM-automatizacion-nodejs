@@ -1,29 +1,29 @@
-import { CartPage } from "@/pages/cart.page";
-import { CheckoutPage } from "@/pages/checkout.page";
-import { HomePage } from "@/pages/home.page";
-import { LoginPage } from "@/pages/login.page";
-import { SingupPage } from "@/pages/singup.page";
-import { AccountCreatedPage } from "@/pages/account-created";
-import { PaymentPage } from "@/pages/payment.page";
-import { PaymentDonePage } from "@/pages/payment-done.page";
-import { DeleteAccountPage } from "@/pages/delete-account.page";
+import { pages } from "@/po/pages";
+// DATA from JSON file
+import Account from "@/utils/data/account.data.json";
+import Checkout from "@/utils/data/checkout.data.json";
+import CreditCardData from "@/utils/data/credit-card.data.json";
+import PaymentDone from "@/utils/data/payment-done.data.json";
+import AccountDeleted from "@/utils/data/delete-account.data.json";
 
-describe("Automation Exercise - Home Page Tests", () => {
+describe("Automation Exercise", () => {
   // Instances
-  const homePage = new HomePage();
-  const cartPage = new CartPage();
-  const loginPage = new LoginPage();
-  const singupPage = new SingupPage();
-  const accountPage = new AccountCreatedPage();
-  const checkoutPage = new CheckoutPage();
-  const paymentPage = new PaymentPage();
-  const paymentDonePage = new PaymentDonePage();
-  const deleteAccountPage = new DeleteAccountPage();
+  let homePage = pages("home");
+  let cartPage = pages("cart");
+  let loginPage = pages("login");
+  let signUpPage = pages("signUp");
+  let accountPage = pages("account");
+  let checkoutPage = pages("checkout");
+  let paymentPage = pages("payment");
+  let paymentDonePage = pages("paymentDone");
+  let deleteAccountPage = pages("deleteAccount");
 
-  it("should navigate to the homepage and add to cart a product", () => {
+  beforeEach(() => {
     // Navigate to home page
     homePage.open();
+  });
 
+  it("The user navigate on the website, create an account and bought a product and finally delete the account", () => {
     // Click to 'Add to cart'
     homePage.addToCartClick();
 
@@ -40,37 +40,18 @@ describe("Automation Exercise - Home Page Tests", () => {
     cartPage.clickToRegisterOrLoginBtn();
 
     // Fill all details in Signup and create account
-    loginPage.verifyLoginPageisVisible();
-    loginPage.enterName();
-    loginPage.enterEmail();
-    loginPage.clickOnSinUp();
+    loginPage.verifyLoginPageIsVisible();
+    loginPage.signUp(Account.name, Account.email);
 
-    // Singup page form details
-    singupPage.selectGender("Mrs"); // "Mr" | "Mrs"
-    singupPage.enterPassword();
-    singupPage.selectDay();
-    singupPage.selectMonth();
-    singupPage.selectYear();
-
-    // Address information
-    singupPage.enterFirstName();
-    singupPage.enterLastName();
-    singupPage.enterCompany();
-    singupPage.enterAddress();
-    singupPage.enterAddress2();
-    singupPage.enterCountry();
-    singupPage.enterState();
-    singupPage.enterCity();
-    singupPage.enterZipcode();
-    singupPage.enterMobileNumber();
-    singupPage.clickOnCreateAccount();
+    // Sign Up page form details
+    signUpPage.createAccount(Account);
 
     // Verify 'ACCOUNT CREATED!' and click 'Continue' button
-    accountPage.validateMessage();
+    accountPage.validateMessages(Account.messages);
     accountPage.clickOnContinueBtn();
 
     // Verify 'Logged in as username' at top
-    homePage.verifyLoggedAsUsername();
+    homePage.verifyLoggedAsUsername(Account.name);
 
     // Click 'Cart' button
     homePage.clickToCartAtHeader();
@@ -79,28 +60,31 @@ describe("Automation Exercise - Home Page Tests", () => {
     cartPage.clickToProceedCheckoutBtn();
 
     // Verify Address Details and Review Your Order
-    checkoutPage.verifyDeliveryDetails();
-    checkoutPage.verifyBillingDetails();
-    checkoutPage.reviewOrder();
+    checkoutPage.verifyDeliveryDetails(Account);
+    checkoutPage.verifyBillingDetails(Account);
+    checkoutPage.reviewOrder(Checkout);
 
     // Enter description in comment text area and click 'Place Order'
-    checkoutPage.enterDescription();
+    checkoutPage.enterDescription(Checkout.messageTextArea);
     checkoutPage.clickOnPlaceOrder();
 
     // Enter payment details: Name on Card, Card Number, CVC, Expiration date
-    paymentPage.fillData();
+    paymentPage.fillData(Account.name, CreditCardData);
 
     // Click 'Pay and Confirm Order' button
     paymentPage.clickOnPayAndConfirmOrderBtn();
 
     // Verify success message 'Your order has been placed successfully!'
-    paymentDonePage.validateSuccessMessage();
+    paymentDonePage.validateSuccessMessage(
+      PaymentDone.orderPlacedMessage,
+      PaymentDone.orderConfirmedMessage
+    );
 
     // Click 'Delete Account' button
     paymentDonePage.clickOnDeleteAccount();
 
     // Verify 'ACCOUNT DELETED!' and click 'Continue' button
-    deleteAccountPage.validateDeletedMessage();
+    deleteAccountPage.validateDeletedMessages(AccountDeleted.messages);
     deleteAccountPage.clickOnContinueBtn();
   });
 });

@@ -1,0 +1,24 @@
+{
+  "name": "John",
+  "lastName": "Pérez",
+  "company": "Pragma",
+  "addressOne": "cra44#54",
+  "addressTwo": "cll5#23",
+  "country": "Canada",
+  "state": "Ontario",
+  "city": "Toronto",
+  "zipCode": "M5V 3L9",
+  "mobileNumber": "+1 416 555 1234",
+  "messages": {
+    "accountCreated": "Account Created!",
+    "congratulations": "Congratulations! Your new account has been successfully created!",
+    "privileges": "You can now take advantage of member privileges to enhance your online shopping experience with us."
+  },
+  "email": "JohnPerez12345@email.com",
+  "password": "pwd123",
+  "birthday": {
+    "day": "18",
+    "month": "December",
+    "year": "1995"
+  }
+}
